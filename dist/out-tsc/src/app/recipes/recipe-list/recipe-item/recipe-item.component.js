@@ -1,9 +1,10 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 let RecipeItemComponent = class RecipeItemComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        this.recipes = [];
     }
+    ngOnInit() { }
 };
 RecipeItemComponent = tslib_1.__decorate([
     Component({
