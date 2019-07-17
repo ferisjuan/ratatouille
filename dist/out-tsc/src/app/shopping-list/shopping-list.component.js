@@ -1,9 +1,14 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
 let ShoppingListComponent = class ShoppingListComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        this.ingredients = [
+            new Ingredient('Salt', 3),
+            new Ingredient('Meat', 2)
+        ];
     }
+    ngOnInit() { }
 };
 ShoppingListComponent = tslib_1.__decorate([
     Component({
