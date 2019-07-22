@@ -9,6 +9,9 @@ let ShoppingListComponent = class ShoppingListComponent {
         ];
     }
     ngOnInit() { }
+    onIngredientAdded(ingredient) {
+        this.ingredients.push(ingredient);
+    }
 };
 ShoppingListComponent = tslib_1.__decorate([
     Component({
