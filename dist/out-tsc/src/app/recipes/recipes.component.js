@@ -2,8 +2,7 @@ import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 let RecipesComponent = class RecipesComponent {
     constructor() { }
-    ngOnInit() {
-    }
+    ngOnInit() { }
 };
 RecipesComponent = tslib_1.__decorate([
     Component({

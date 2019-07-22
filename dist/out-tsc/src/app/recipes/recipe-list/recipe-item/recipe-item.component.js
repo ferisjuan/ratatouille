@@ -1,11 +1,20 @@
 import * as tslib_1 from "tslib";
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 let RecipeItemComponent = class RecipeItemComponent {
     constructor() {
-        this.recipes = [];
+        this.recipeSelected = new EventEmitter();
+    }
+    onSelected() {
+        this.recipeSelected.emit();
     }
     ngOnInit() { }
 };
+tslib_1.__decorate([
+    Input()
+], RecipeItemComponent.prototype, "recipe", void 0);
+tslib_1.__decorate([
+    Output()
+], RecipeItemComponent.prototype, "recipeSelected", void 0);
 RecipeItemComponent = tslib_1.__decorate([
     Component({
         selector: 'app-recipe-item',

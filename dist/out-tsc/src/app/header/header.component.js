@@ -4,9 +4,6 @@ let HeaderComponent = class HeaderComponent {
     constructor() {
         this.featureSelected = new EventEmitter();
     }
-    // onSelect(feature: string) {
-    //   this.featureSelected.emit(feature);
-    // }
     onSelect(feature) {
         this.featureSelected.emit(feature);
     }
@@ -17,8 +14,8 @@ tslib_1.__decorate([
 HeaderComponent = tslib_1.__decorate([
     Component({
         selector: 'app-header',
-        templateUrl: './header.html'
+        templateUrl: './header.component.html'
     })
 ], HeaderComponent);
 export { HeaderComponent };
-//# sourceMappingURL=header.js.map
+//# sourceMappingURL=header.component.js.map
