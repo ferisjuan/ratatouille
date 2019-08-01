@@ -1,17 +1,25 @@
 import * as tslib_1 from "tslib";
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 let RecipeDetailComponent = class RecipeDetailComponent {
-    constructor(recipeServices) {
+    constructor(recipeServices, router, route) {
         this.recipeServices = recipeServices;
+        this.router = router;
+        this.route = route;
     }
-    ngOnInit() { }
+    ngOnInit() {
+        this.paramsSubscription = this.route.params.subscribe((params) => {
+            this.id = +params['id'];
+            this.recipe = this.recipeServices.getRecipe(this.id);
+        });
+    }
+    ngOnDestroy() { }
+    onEditRecipe() {
+        this.router.navigate(['edit'], { relativeTo: this.route });
+    }
     onAddToShoppingList() {
         this.recipeServices.addIngredientsToShoppingList(this.recipe.ingredients);
     }
 };
-tslib_1.__decorate([
-    Input()
-], RecipeDetailComponent.prototype, "recipe", void 0);
 RecipeDetailComponent = tslib_1.__decorate([
     Component({
         selector: 'app-recipe-detail',
