@@ -2,12 +2,8 @@ import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 import { RecipeService } from './recipe.services';
 let RecipesComponent = class RecipesComponent {
-    constructor(recipeService) {
-        this.recipeService = recipeService;
-    }
+    constructor() { }
     ngOnInit() {
-        this.recipeService.recipeSelected
-            .subscribe((recipe) => this.selectedRecipe = recipe);
     }
 };
 RecipesComponent = tslib_1.__decorate([

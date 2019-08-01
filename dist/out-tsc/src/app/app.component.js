@@ -3,11 +3,6 @@ import { Component } from '@angular/core';
 let AppComponent = class AppComponent {
     constructor() {
         this.title = 'Ratatouille';
-        // navitation
-        this.loadedFeature = 'recipe';
-    }
-    onNavigate(feature) {
-        this.loadedFeature = feature;
     }
 };
 AppComponent = tslib_1.__decorate([

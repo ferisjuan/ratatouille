@@ -1,13 +1,12 @@
 import { Recipe } from './recipe.model';
-import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
-import {  Router, ActivatedRoute } from '@angular/router';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
+import { Injectable } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
@@ -24,13 +23,17 @@ export class RecipeService {
     )
   ];
 
-  constructor(private slService: ShoppingListService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private slService: ShoppingListService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   getRecipes() {
     return this.recipes.slice(); // slice returns a copy
   }
 
-  getRecipe(index: number){
+  getRecipe(index: number) {
     return this.recipes.slice()[index];
   }
 
