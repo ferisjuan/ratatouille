@@ -11,6 +11,9 @@ let ShoppingListComponent = class ShoppingListComponent {
     ngOnDestroy() {
         this.ingredientsSubject.unsubscribe();
     }
+    onEditItem(index) {
+        this.slService.startedEditing.next(index);
+    }
 };
 ShoppingListComponent = tslib_1.__decorate([
     Component({
