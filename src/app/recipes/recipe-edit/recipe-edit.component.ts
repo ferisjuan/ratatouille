@@ -25,17 +25,8 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit() {
-    // const newRecipe = new Recipe(
-    //   this.recipeForm.value[`name`],
-    //   this.recipeForm.value[`description`],
-    //   this.recipeForm.value[`imagePath`],
-    //   this.recipeForm.value[`ingredients`]
-    // ); I can change the last lines for this.recipeForm.value
-    // since the form and the passed obj have the same format of the recipe
-
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
-      /* this can be made since the form and the passed obj have the same format of the recipe*/
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
